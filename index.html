@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/10/Weekly-Analysis/" itemprop="url">Calculating Week Number And Period</a></h1>
+                <a class="post-title-link" href="/2019/04/10/Weekly-Analysis/" itemprop="url">Week Number And Week Period</a></h1>
         
 
         <div class="post-meta">
@@ -329,7 +329,7 @@
 <h2 id="Lessons"><a href="#Lessons" class="headerlink" title="Lessons"></a>Lessons</h2><ol>
 <li><p><code>&lt;date object&gt; - &lt;date object&gt;</code> returns the time difference in millisecond between two date objects.</p>
 </li>
-<li><p>It is easier and obvious to find out the relationship between two variables with some representative sample figures:<br>| daysNumber | weekNumber |<br>| :—: | :—: |<br>| 1 | 1 |<br>| 2 | 1 |<br>| 7 | 1 |<br>| 8 | 2 |<br>| 14 | 2 |<br>| 15 | 3 |<br>With some further observation, one of the possible expressions can be: <code>weekNumber = Math.floor((daysNumber-1)/7) + 1</code>.</p>
+<li><p>It is easier and obvious to find out the relationship between two variables with some representative sample figures:<br>| daysNumber | weekNumber |<br>| — | — |<br>| 1 | 1 |<br>| 2 | 1 |<br>| … | … |<br>| 7 | 1 |<br>| 8 | 2 |<br>| … | … |<br>| 14 | 2 |<br>| 15 | 3 |<br>With some further observation, one of the possible expressions can be: <code>weekNumber = Math.floor((daysNumber-1)/7) + 1</code>.</p>
 </li>
 <li><p>“<a href="http://momentjs.com/docs/" title="Moment.js | Docs" target="_blank" rel="noopener">moment</a>“ is an npm package that is very useful in parsing and formatting JS date objects.</p>
 </li>
