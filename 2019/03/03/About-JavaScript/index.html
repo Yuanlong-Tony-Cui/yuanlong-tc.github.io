@@ -83,11 +83,11 @@
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript at First Sight">
-<meta property="og:url" content="http://yoursite.com/2019/04/02/About-JavaScript/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/03/About-JavaScript/index.html">
 <meta property="og:site_name" content="巴颜">
 <meta property="og:description" content="IntroductionWhen first exposed to JavaScript, this set of concepts confused me a lot once upon a time, so I hope this small article will help to some extent whoever needs some clarification on this. J">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-13T22:06:22.336Z">
+<meta property="og:updated_time" content="2019-04-19T22:04:23.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript at First Sight">
 <meta name="twitter:description" content="IntroductionWhen first exposed to JavaScript, this set of concepts confused me a lot once upon a time, so I hope this small article will help to some extent whoever needs some clarification on this. J">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/02/About-JavaScript/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/03/About-JavaScript/">
 
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/02/About-JavaScript/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/About-JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yuanlong (Tony) Cui">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-02T23:21:09-04:00">
-                2019-04-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T23:21:09-05:00">
+                2019-03-03
               </time>
             
 
@@ -322,10 +322,10 @@
       
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>When first exposed to JavaScript, this set of concepts confused me a lot once upon a time, so I hope this small article will help to some extent whoever needs some clarification on this.</p>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When first exposed to JavaScript, this set of concepts confused me a lot once upon a time, so I hope this small article will help to some extent whoever needs some clarification on this.</p>
 <p>JavaScript looked a little bit different from C++ and Python when I first saw the code in a JS file. Some of the characteristics I found it to have was those “callback” functions and a bunch of “.then()”s after function calls. It really took me a long time to figure out how JS files are run and get used to the “JS logic”. So here comes the concise version of explanation.</p>
 <p>Note: To keep the code snippets shorter, the declaration of some variables would be omitted. Instead, necessary explanation will be made for clarification.</p>
-<h1 id="Synchronous-vs-Asynchronous-Code-Execution"><a href="#Synchronous-vs-Asynchronous-Code-Execution" class="headerlink" title="Synchronous vs. Asynchronous Code Execution"></a>Synchronous vs. Asynchronous Code Execution</h1><p>Asynchronous (async) code execution only initiates an operation without waiting for its completion to execute the next one.</p>
+<h2 id="Synchronous-vs-Asynchronous-Code-Execution"><a href="#Synchronous-vs-Asynchronous-Code-Execution" class="headerlink" title="Synchronous vs. Asynchronous Code Execution"></a>Synchronous vs. Asynchronous Code Execution</h2><p>Asynchronous (async) code execution only initiates an operation without waiting for its completion to execute the next one.</p>
 <p>If you are familiar with one or multiple programming language but new to JavaScript, it would be straightforward to say: synchronous code is the “normal way” of code execution and asynchronous one is the “JS way” of code execution.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// db.collection.find() fetches a specified document from the MongoDB database:</span></span><br><span class="line">db.collection.findOne(&#123; <span class="attr">id</span>: <span class="string">"9527"</span> &#125;)</span><br><span class="line">.then(<span class="function"><span class="params">returnedDocument</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Line One executed"</span>, returnedDocument))</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err)); <span class="comment">// Line One</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Line Two executed"</span>); <span class="comment">// Line Two</span></span><br></pre></td></tr></table></figure>
 <p>When running the code above, you may expect to see “Line Two executed” printed out after “Line One executed”. However, it will be the other way aroud: “Line One executed” will turn out to be printed out after “Line Two executed”, which is exactly the “JS way” of code execution.</p>
@@ -333,7 +333,7 @@
 <p>In the example above, since the code was written in JavaScript, the type of its code execution is asynchronous. Therefore, after the compiler initiated Line One, it initiated Line Two immediately, without waiting for Line One to finish being executed.</p>
 <p>Now, the question is: whether the execution was “synchronous” or “asynchronous”, Line One was still initiated prior to Line Two anyway. How come Line One executed the “console.log()” later than Line Two?</p>
 <p>The answer is: it was the “.findOne()” that delayed Line One to reach its “console.log()”.<br>And the reason for this delay is “.findOne()” returns a “promise”, which usually takes a relatively long time.</p>
-<h1 id="Promise-“-then-”-And-“-catch-”"><a href="#Promise-“-then-”-And-“-catch-”" class="headerlink" title="Promise, “.then()” And “.catch()”"></a>Promise, “.then()” And “.catch()”</h1><p>At the end of the last section, we’ve learned that a “promise” is returned by “.findOne()”. If you try to replace</p>
+<h2 id="Promise-“-then-”-And-“-catch-”"><a href="#Promise-“-then-”-And-“-catch-”" class="headerlink" title="Promise, “.then()” And “.catch()”"></a>Promise, “.then()” And “.catch()”</h2><p>At the end of the last section, we’ve learned that a “promise” is returned by “.findOne()”. If you try to replace</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.findOne(&#123; <span class="attr">id</span>: <span class="string">"9527"</span> &#125;)</span><br><span class="line">.then(<span class="function"><span class="params">returnedDocument</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Line One executed"</span>, returnedDocument))</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err)); <span class="comment">// Line One</span></span><br></pre></td></tr></table></figure>
 <p>with</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(db.collection.findOne(&#123; <span class="attr">id</span>: <span class="string">"9527"</span> &#125;));</span><br></pre></td></tr></table></figure>
@@ -341,7 +341,7 @@
 <p>Basically, a promise is a returned object that shows two things: the completion/failure of an async operation and the value returned by this async operation.</p>
 <p>In order to print out the returned value instead of that meaningless “object Promise”, you need to attach a “.then()” to whatever returns a promise. With the completion of the previous async operation, what “.then()” will do is receiving the promise returned by the last function as a parameter and passing that parameter to a function. It is interesting to note that, if a “.then()” returns a new promise, we need to attach another “.then()” to it to deal with that new promise. In the previous example, if we want to see what the full document is with the id equal to “9527”, we simply pass “returnedDocument” to a console.log() function.</p>
 <p>Nevertheless, “.then()” cannot deal with errors. If “.findOne()” didn’t succeed but failed, nothing will be printed out, not even an error message. In case any error occurs, we usually want to see what the error is by adding a “.catch()” at the end (with a console.log() in it). With the presence of “.catch()”, “.then()”(s) will pass an error down till the error is passed to whatever function in the “.catch()”.</p>
-<h1 id="“await”-And-“async-function”"><a href="#“await”-And-“async-function”" class="headerlink" title="“await” And “async function”"></a>“await” And “async function”</h1><p>In the last section, “.then()” and “.catch()” were used to solved the “object Promise” issue and print out the document queried for.</p>
+<h2 id="“await”-And-“async-function”"><a href="#“await”-And-“async-function”" class="headerlink" title="“await” And “async function”"></a>“await” And “async function”</h2><p>In the last section, “.then()” and “.catch()” were used to solved the “object Promise” issue and print out the document queried for.</p>
 <p>If the code on Line One</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.collection.findOne(&#123; <span class="attr">id</span>: <span class="string">"9527"</span> &#125;)</span><br><span class="line">.then(<span class="function"><span class="params">returnedDocument</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Line One executed"</span>, returnedDocument))</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err)); <span class="comment">// Line One</span></span><br></pre></td></tr></table></figure>
 <p>is replaced with</p>
@@ -379,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/02/Intro/" rel="next" title="Intro">
-                <i class="fa fa-chevron-left"></i> Intro
+              <a href="/2019/02/27/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -388,6 +388,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/02/Intro/" rel="prev" title="Intro">
+                Intro <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -464,7 +468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -519,7 +523,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Synchronous-vs-Asynchronous-Code-Execution"><span class="nav-number">2.</span> <span class="nav-text">Synchronous vs. Asynchronous Code Execution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise-“-then-”-And-“-catch-”"><span class="nav-number">3.</span> <span class="nav-text">Promise, “.then()” And “.catch()”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“await”-And-“async-function”"><span class="nav-number">4.</span> <span class="nav-text">“await” And “async function”</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronous-vs-Asynchronous-Code-Execution"><span class="nav-number">2.</span> <span class="nav-text">Synchronous vs. Asynchronous Code Execution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-“-then-”-And-“-catch-”"><span class="nav-number">3.</span> <span class="nav-text">Promise, “.then()” And “.catch()”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“await”-And-“async-function”"><span class="nav-number">4.</span> <span class="nav-text">“await” And “async function”</span></a></li></ol></div>
             
 
           </div>
