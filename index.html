@@ -372,11 +372,13 @@
 <li><p><code>&lt;date object&gt; - &lt;date object&gt;</code> returns the time difference in millisecond between two date objects.</p>
 </li>
 <li><p>It is easier and obvious to find out the relationship between two variables with some representative sample figures:</p>
-<p>| daysNumber | weekNumber |<br>| :——–: | :——–: |<br>|     1      |     1      |<br>|     2      |     1      |<br>|    …     |    …     |<br>|     7      |     1      |<br>|     8      |     2      |<br>|    …     |    …     |<br>|     14     |     2      |<br>|     15     |     3      |</p>
+</li>
+<li><p>| daysNumber | weekNumber |<br>| :——–: | :——–: |<br>|     1      |     1      |<br>|     2      |     1      |<br>|    …     |    …     |<br>|     7      |     1      |<br>|     8      |     2      |<br>|    …     |    …     |<br>|     14     |     2      |<br>|     15     |     3      |</p>
+</li>
+</ol>
 <p>With some further observation, one of the possible expressions is <code>weekNumber = Math.floor((daysNumber-1)/7) + 1</code>.</p>
-</li>
-<li><p><a href="http://momentjs.com/docs/" title="Moment.js | Docs" target="_blank" rel="noopener">Moment</a> is an npm package that is very useful in parsing and formatting JS date objects.</p>
-</li>
+<ol start="3">
+<li><a href="http://momentjs.com/docs/" title="Moment.js | Docs" target="_blank" rel="noopener">Moment</a> is an npm package that is very useful in parsing and formatting JS date objects.</li>
 </ol>
 
           
