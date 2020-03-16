@@ -2,7 +2,7 @@
 title: NodeJS at First Sight
 date: 2019-03-03 00:00:00
 categories:
-  - Programming
+  - Career
 tags:
   - JavaScript
   - Node.js

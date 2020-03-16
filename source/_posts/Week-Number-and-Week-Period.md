@@ -2,7 +2,7 @@
 title: Week Number and Week Period
 date: 2019-04-10 00:00:00
 categories:
-  - Programming
+  - My Career
 tags:
   - JavaScript
   - Algorithm
