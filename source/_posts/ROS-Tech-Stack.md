@@ -2,7 +2,7 @@
 title: Robot OS Checklist
 date: 2019-12-21 00:00:00
 categories:
-  - My Career
+  - Career
 tags:
   - Robotics
 ---

@@ -2,7 +2,7 @@
 title: The Continent
 date: 2019-09-13 00:00:00
 categories:
-  - My Artworks
+  - Artworks
 tags:
   - Lyrics
   - Translation

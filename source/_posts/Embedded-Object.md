@@ -2,7 +2,7 @@
 title: Embedded Object
 date: 2019-03-26 00:00:00
 categories:
-  - My Career
+  - Career
 tags:
   - JavaScript
   - MongoDB
