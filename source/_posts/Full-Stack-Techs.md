@@ -1,10 +1,10 @@
 ---
-title: Web Development Checklist
-date: 2019-12-21 00:00:00
+title: Full Stack Web Development
+date: 2019-12-25 00:00:00
 categories:
   - Career
 tags:
-  - Web Development
+  - JavaScript
 ---
 
 Languages:
