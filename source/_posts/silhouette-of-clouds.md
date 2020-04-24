@@ -2,7 +2,7 @@
 title: 云的剪影
 date: 2015-04-26 00:00:00
 categories:
-  - Artworks
+  - Arts
 tags:
   - Prose
   - Middle School

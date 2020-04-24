@@ -2,7 +2,7 @@
 title: The Continent (Lyrics)
 date: 2019-09-13 00:00:00
 categories:
-  - Artworks
+  - Arts
 tags:
   - Lyrics
   - Translation
