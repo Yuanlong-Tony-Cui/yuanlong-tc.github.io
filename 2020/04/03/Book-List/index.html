@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,MongoDB,Algorithm,">
+  <meta name="keywords" content="Book,Literature,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Embedded ObjectIntroductionThe following algorithm helps to store data and calculate subtotal. DescriptionIn the MongoDB database, there are a number of documents each of which has a year field (Year,">
-<meta name="keywords" content="JavaScript,MongoDB,Algorithm">
+<meta name="description" content="《平凡的世界》(2020.04.04) 《挪威的森林》(2020.04.20)">
+<meta name="keywords" content="Book,Literature">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Embedded Object">
-<meta property="og:url" content="http://yoursite.com/2019/03/26/Embedded-Object/index.html">
+<meta property="og:title" content="Book List">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/Book-List/index.html">
 <meta property="og:site_name" content="巴颜">
-<meta property="og:description" content="Embedded ObjectIntroductionThe following algorithm helps to store data and calculate subtotal. DescriptionIn the MongoDB database, there are a number of documents each of which has a year field (Year,">
+<meta property="og:description" content="《平凡的世界》(2020.04.04) 《挪威的森林》(2020.04.20)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-20T23:37:07.522Z">
+<meta property="og:updated_time" content="2020-04-26T03:02:54.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Embedded Object">
-<meta name="twitter:description" content="Embedded ObjectIntroductionThe following algorithm helps to store data and calculate subtotal. DescriptionIn the MongoDB database, there are a number of documents each of which has a year field (Year,">
+<meta name="twitter:title" content="Book List">
+<meta name="twitter:description" content="《平凡的世界》(2020.04.04) 《挪威的森林》(2020.04.20)">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/26/Embedded-Object/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/03/Book-List/">
 
 
 
 
 
-  <title>Embedded Object | 巴颜</title>
+  <title>Book List | 巴颜</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/Embedded-Object/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/Book-List/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yuanlong (Tony) Cui">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Embedded Object</h1>
+          <h1 class="post-title" itemprop="name headline">Book List</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T00:00:00-04:00">
-                2019-03-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-03T00:00:00-04:00">
+                2020-04-03
               </time>
             
 
@@ -285,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Career/" itemprop="url" rel="index">
-                    <span itemprop="name">Career</span>
+                  <a href="/categories/Arts/" itemprop="url" rel="index">
+                    <span itemprop="name">Arts</span>
                   </a>
                 </span>
 
@@ -322,10 +322,10 @@
       
 
       
-        <h1 id="Embedded-Object"><a href="#Embedded-Object" class="headerlink" title="Embedded Object"></a>Embedded Object</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The following algorithm helps to store data and calculate subtotal.</p>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In the MongoDB database, there are a number of documents each of which has a year field (Year, type: string), a month field (Month, type: string) and a revenue field (Revenue, type: float).<br>Each month can have zero to multiple documents recording the revenue obtained from a transaction.<br>The task is to calculate and visualize the subtotal of revenue for each month.</p>
-<h2 id="Inputs-amp-Outputs"><a href="#Inputs-amp-Outputs" class="headerlink" title="Inputs &amp; Outputs"></a>Inputs &amp; Outputs</h2><p>Input(s): a MongoDB collection.<br>Output(s): an object containing revenues for all existing years and months (printed &amp; returned).</p>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">analyzeForEachMonth</span> (<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get all the documents (in async function)</span></span><br><span class="line">  <span class="keyword">const</span> transactions = <span class="keyword">await</span> db.Transaction.model.find();</span><br><span class="line">  <span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;transactions.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; Year, Month, Revenue &#125; = transactions[i];</span><br><span class="line">      <span class="comment">// Check if Year and Month have been created in obj. If not, create one with initial revenue of 0.</span></span><br><span class="line">      <span class="keyword">if</span> (!obj[Year]) &#123;</span><br><span class="line">          obj[Year] = &#123;&#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!obj[Year][Month]) &#123;</span><br><span class="line">          obj[Year][Month] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// Add Revenue to the corresponding Year and Month</span></span><br><span class="line">      obj[Year][Month] += Revenue;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Visualize obj</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Cumulative revenue for all applicable years and months:'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(obj);</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sample Output</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  Cumulative revenue for all applicable years and months:</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">    '2017': &#123;</span></span><br><span class="line"><span class="comment">      '4': 13,000</span></span><br><span class="line"><span class="comment">      '12': 36,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2018': &#123;</span></span><br><span class="line"><span class="comment">      '1': 18,000</span></span><br><span class="line"><span class="comment">      '2': 32,000</span></span><br><span class="line"><span class="comment">      '9': 14,000</span></span><br><span class="line"><span class="comment">      '12': 30,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2019': &#123;</span></span><br><span class="line"><span class="comment">      '3': 34,000</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+        <ol>
+<li>《平凡的世界》(2020.04.04)</li>
+<li>《挪威的森林》(2020.04.20)</li>
+</ol>
 
       
     </div>
@@ -343,11 +343,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Book/" rel="tag"># Book</a>
           
-            <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
-          
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            <a href="/tags/Literature/" rel="tag"># Literature</a>
           
         </div>
       
@@ -360,8 +358,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/03/Hello-World/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020/03/22/The-Continent-MV/" rel="next" title="后会无期 (The Continent)">
+                <i class="fa fa-chevron-left"></i> 后会无期 (The Continent)
               </a>
             
           </div>
@@ -370,8 +368,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/10/Week-Number-and-Week-Period/" rel="prev" title="Week Number and Week Period">
-                Week Number and Week Period <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/17/Learning-Strategy/" rel="prev" title="How to Learn New Concepts in Engineering Undergraduate Stage">
+                How to Learn New Concepts in Engineering Undergraduate Stage <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -424,17 +422,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -494,22 +483,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Embedded-Object"><span class="nav-number">1.</span> <span class="nav-text">Embedded Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.2.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inputs-amp-Outputs"><span class="nav-number">1.3.</span> <span class="nav-text">Inputs &amp; Outputs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.4.</span> <span class="nav-text">Algorithm</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
