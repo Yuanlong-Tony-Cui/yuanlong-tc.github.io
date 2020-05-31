@@ -229,6 +229,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/Week-Number-and-Week-Period/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanlong (Tony) Cui">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="巴颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/10/Week-Number-and-Week-Period/" itemprop="url">Week Number and Week Period</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T00:00:00-04:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Career/" itemprop="url" rel="index">
+                    <span itemprop="name">Career</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Week-Number-and-Week-Period"><a href="#Week-Number-and-Week-Period" class="headerlink" title="Week Number and Week Period"></a>Week Number and Week Period</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The following algorithm deals with a seires of common problems about the calculation of time and period.</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a start date (e.g. Dec 31, 2018) and a current date (e.g. April 26, 2019), calculate the week number of the current date (counting from the start date) and the start date and the end date of that week.</p>
+<h2 id="Inputs-amp-Outputs"><a href="#Inputs-amp-Outputs" class="headerlink" title="Inputs &amp; Outputs"></a>Inputs &amp; Outputs</h2><p>Input(s): a start date (string) and a current date (string).<br>Output(s): the week number of the current date (printed) and the period of that week (printed).</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install moment</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getWeekNumberAndPeriod</span> (<span class="params">start_date_string, curr_date_string</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Create a Date object for the start date and the example date:</span></span><br><span class="line">  <span class="keyword">const</span> startDate = <span class="keyword">new</span> <span class="built_in">Date</span>(start_date_string);</span><br><span class="line">  <span class="keyword">const</span> exampleDate = <span class="keyword">new</span> <span class="built_in">Date</span>(curr_date_string);</span><br><span class="line">  <span class="comment">// Time difference in days in decimal:</span></span><br><span class="line">  <span class="keyword">const</span> inDecimal = (exampleDate - startDate)/<span class="number">1000</span>/<span class="number">60</span>/<span class="number">60</span>/<span class="number">24</span>;</span><br><span class="line">  <span class="keyword">const</span> dayNumber = <span class="built_in">Math</span>.ceil(inDecimal); <span class="comment">// "Dec 31, 2018 23:00:00" is still considered as Day One.</span></span><br><span class="line">  <span class="keyword">const</span> weekNumber = <span class="built_in">Math</span>.floor((daysNumber<span class="number">-1</span>)/<span class="number">7</span>) + <span class="number">1</span>; <span class="comment">// "Jan 7, 2019 00:00:00" is considered to be in Week Two.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Week Number: <span class="subst">$&#123;weekNumber&#125;</span>.`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> startDateMs = startDate.getTime();</span><br><span class="line">  <span class="keyword">const</span> startWeekMs = startDateMs + ((weekNumber<span class="number">-1</span>)*<span class="number">7</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">const</span> startWeekDate = <span class="keyword">new</span> <span class="built_in">Date</span>(startWeekMs);</span><br><span class="line">  <span class="comment">// Use Moment to format time:</span></span><br><span class="line">  <span class="keyword">const</span> moment = <span class="built_in">require</span>(<span class="string">"moment"</span>);</span><br><span class="line">  moment().format();</span><br><span class="line">  <span class="comment">// Format startWeekDate:</span></span><br><span class="line">  <span class="keyword">const</span> startWeekStr = moment(startWeekDate).format(<span class="string">'MMM D, YYYY'</span>);</span><br><span class="line">  <span class="keyword">const</span> endWeekMs = startDateMs + (weekNumber*<span class="number">7</span><span class="number">-1</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">const</span> endWeekDate = <span class="keyword">new</span> <span class="built_in">Date</span>(endWeekMs);</span><br><span class="line">  <span class="comment">// Format endWeekDate:</span></span><br><span class="line">  <span class="keyword">const</span> endWeekStr = moment(endWeekDate).format(<span class="string">'MMM D, YYYY'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Week Period: <span class="subst">$&#123;startWeekStr&#125;</span> ~ <span class="subst">$&#123;endWeekStr&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Lessons"><a href="#Lessons" class="headerlink" title="Lessons"></a>Lessons</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p><code>new Date()</code> is able to take either one of the following two types of parameter:<br>1 - a string that indicates a time point. (e.g. <code>&quot;Dec 31, 2018 00:00:00&quot;</code> or <code>&quot;2018-12-31 00:00:00&quot;</code>),<br>2 - an integer that indicates the cumulative time in milliseconds starting from Jan 1, 1970, 00:00:00.000 GMT,<br>and it returns a JavaScript date object based on the given parameter.</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><code>exampleDate - startDate</code> returns the time difference in millisecond between two date objects.<br>If the difference is positive, then <code>exampleDate</code> is after <code>startDate</code>; if the difference is negative, then <code>exampleDate</code> is before <code>startDate</code>.</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>To find out the relationship between two variables, it is a good idea to satrt with comparing several representative sample figures:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">daysNumber</th>
+<th style="text-align:center">weekNumber</th>
+<th style="text-align:center">startWeekMs</th>
+<th style="text-align:center">endWeekMs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><code>startDateMs + 0 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 6 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><code>startDateMs + 0 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 6 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><code>startDateMs + 7 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 13 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><code>startDateMs + 7 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 13 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><code>startDateMs + 14 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 20 * 24*60*60*1000</code></td>
+</tr>
+</tbody>
+</table>
+<p>With some further observation, it becomes much easier to induce the following expressions:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> weekNumber = <span class="built_in">Math</span>.floor((daysNumber<span class="number">-1</span>)/<span class="number">7</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> startWeekMs = startDateMs + ((weekNumber<span class="number">-1</span>)*<span class="number">7</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line"><span class="keyword">const</span> endWeekMs = startDateMs + (weekNumber*<span class="number">7</span><span class="number">-1</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><a href="http://momentjs.com/docs/" title="Moment.js | Docs" target="_blank" rel="noopener">Moment</a> is an npm package that is very useful in parsing and formatting JS date objects.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/Embedded-Object/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,134 +532,6 @@
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In the MongoDB database, there are a number of documents each of which has a year field (Year, type: string), a month field (Month, type: string) and a revenue field (Revenue, type: float).<br>Each month can have zero to multiple documents recording the revenue obtained from a transaction.<br>The task is to calculate and visualize the subtotal of revenue for each month.</p>
 <h2 id="Inputs-amp-Outputs"><a href="#Inputs-amp-Outputs" class="headerlink" title="Inputs &amp; Outputs"></a>Inputs &amp; Outputs</h2><p>Input(s): a MongoDB collection.<br>Output(s): an object containing revenues for all existing years and months (printed &amp; returned).</p>
 <h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">analyzeForEachMonth</span> (<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get all the documents (in async function)</span></span><br><span class="line">  <span class="keyword">const</span> transactions = <span class="keyword">await</span> db.Transaction.model.find();</span><br><span class="line">  <span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;transactions.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; Year, Month, Revenue &#125; = transactions[i];</span><br><span class="line">      <span class="comment">// Check if Year and Month have been created in obj. If not, create one with initial revenue of 0.</span></span><br><span class="line">      <span class="keyword">if</span> (!obj[Year]) &#123;</span><br><span class="line">          obj[Year] = &#123;&#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!obj[Year][Month]) &#123;</span><br><span class="line">          obj[Year][Month] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// Add Revenue to the corresponding Year and Month</span></span><br><span class="line">      obj[Year][Month] += Revenue;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Visualize obj</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Cumulative revenue for all applicable years and months:'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(obj);</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sample Output</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  Cumulative revenue for all applicable years and months:</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">    '2017': &#123;</span></span><br><span class="line"><span class="comment">      '4': 13,000</span></span><br><span class="line"><span class="comment">      '12': 36,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2018': &#123;</span></span><br><span class="line"><span class="comment">      '1': 18,000</span></span><br><span class="line"><span class="comment">      '2': 32,000</span></span><br><span class="line"><span class="comment">      '9': 14,000</span></span><br><span class="line"><span class="comment">      '12': 30,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2019': &#123;</span></span><br><span class="line"><span class="comment">      '3': 34,000</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/Hello-World/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yuanlong (Tony) Cui">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="巴颜">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/03/Hello-World/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T00:00:00-05:00">
-                2019-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
         
@@ -622,6 +700,134 @@
 <p>, the document printed out should remain the same. Here, an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await" title="await - JavaScript | MDN" target="_blank" rel="noopener"><code>await</code></a> kind of breaks the rule of the current asynchronous execution and forces JavaScript to initiate <code>Line One 2</code> after <code>Line One 1</code> is completely finished, which works like synchronous execution.</p>
 <p>The only thing that is important to note here is <code>await</code> should be used in an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" title="async function - JavaScript | MDN" target="_blank" rel="noopener"><code>async function</code></a> only, otherwise the compiler will give an error like <code>Error: await is only valid in async function</code>.</p>
 <p>For those who feel uncomfortable with the asynchronous logic, using <code>await</code> in <code>async function</code> can be very helpful because of the synchronous environment it creates.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/03/Hello-World/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanlong (Tony) Cui">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="巴颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/03/Hello-World/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T00:00:00-05:00">
+                2019-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
         
@@ -854,7 +1060,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
