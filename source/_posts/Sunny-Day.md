@@ -11,7 +11,7 @@ tags:
 
 献给每一段无疾而终的爱。
 
-{% youtube bURGdq_dUXA %}
+{% youtube JbLuNnvuXik %}
 
 bilibili: [【晴天/AMV/秒速五厘米/言叶之庭】献给每一段无疾而终的爱](https://www.bilibili.com/video/BV1eK4y187jK)
 
