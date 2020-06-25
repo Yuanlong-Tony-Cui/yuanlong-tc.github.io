@@ -11,7 +11,7 @@ tags:
 
 bilibili: [bilibili 献给新一代的演讲《后浪》](https://www.bilibili.com/video/BV1FV411d7u7)
 
-......
+/ CONTENT HIDDEN BY AUTHOR /
 
 <!-- 在这个瞬息万变的时代，互联网产业的发展带给人们空前的机遇。网络的大范围普及使得全世界的人们拥有了越来越便捷的获取和分享知识的权利。而在这个时代受益最大的一批人，当数全世界的青年们。
 
