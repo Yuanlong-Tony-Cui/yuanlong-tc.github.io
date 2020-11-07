@@ -1,5 +1,5 @@
 ---
-title: How to Learn New Concepts in Engineering Undergraduate Stage
+title: Learning Strategies for Undergraduate Study in Engineering
 date: 2020-04-17 00:00:00
 categories:
   - Career
