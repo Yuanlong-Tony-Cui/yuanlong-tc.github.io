@@ -78,3 +78,8 @@ Winter 2021:
 Spring 2021:
 
 1. 《银魂》
+
+Fall 2021:
+
+1. 《天降之物》
+2. 《One Room》
