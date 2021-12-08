@@ -13,7 +13,7 @@ tags:
 
 bilibili: [【新海诚 × 五月天】七部作品催泪混剪「终于结束的起点」](https://www.bilibili.com/video/BV1Af4y1J7q7)
 
-Preface:
+序言：
 
 一段故事的终点，亦是两个人新的起点。
 
