@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Procreate,Illustration,">
+  <meta name="keywords" content="Linux,Ubuntu,Dual Boot,OS,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="《中二病也要谈恋爱！》 (2019.02.22) 《山海》 (2020.07.10) 《Cynthia》 (2020.09.01)">
-<meta name="keywords" content="Procreate,Illustration">
+<meta name="description" content="This post is aimed to help people dual boot Windows 10 and Ubuntu on their PC. It is worth mentioning that this installation guide is very case-dependent and you might need an alternative way in some">
+<meta name="keywords" content="Linux,Ubuntu,Dual Boot,OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="展览馆">
-<meta property="og:url" content="http://yoursite.com/2020/09/24/Artwork-Gallery/index.html">
+<meta property="og:title" content="Ubuntu Installation Guide">
+<meta property="og:url" content="http://yoursite.com/2023/01/03/Ubuntu-Installation-Guide/index.html">
 <meta property="og:site_name" content="空と海の詩">
-<meta property="og:description" content="《中二病也要谈恋爱！》 (2019.02.22) 《山海》 (2020.07.10) 《Cynthia》 (2020.09.01)">
+<meta property="og:description" content="This post is aimed to help people dual boot Windows 10 and Ubuntu on their PC. It is worth mentioning that this installation guide is very case-dependent and you might need an alternative way in some">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-04-21T16:12:52.376Z">
+<meta property="og:updated_time" content="2023-01-07T04:31:53.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="展览馆">
-<meta name="twitter:description" content="《中二病也要谈恋爱！》 (2019.02.22) 《山海》 (2020.07.10) 《Cynthia》 (2020.09.01)">
+<meta name="twitter:title" content="Ubuntu Installation Guide">
+<meta name="twitter:description" content="This post is aimed to help people dual boot Windows 10 and Ubuntu on their PC. It is worth mentioning that this installation guide is very case-dependent and you might need an alternative way in some">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/09/24/Artwork-Gallery/">
+  <link rel="canonical" href="http://yoursite.com/2023/01/03/Ubuntu-Installation-Guide/">
 
 
 
 
 
-  <title>展览馆 | 空と海の詩</title>
+  <title>Ubuntu Installation Guide | 空と海の詩</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/24/Artwork-Gallery/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/03/Ubuntu-Installation-Guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yuanlong Tony Cui">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">展览馆</h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu Installation Guide</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-24T00:00:00-04:00">
-                2020-09-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-01-03T00:00:00-05:00">
+                2023-01-03
               </time>
             
 
@@ -285,8 +285,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Arts/" itemprop="url" rel="index">
-                    <span itemprop="name">Arts</span>
+                  <a href="/categories/Career/" itemprop="url" rel="index">
+                    <span itemprop="name">Career</span>
                   </a>
                 </span>
 
@@ -322,11 +322,24 @@
       
 
       
-        <ol>
-<li><a href="https://www.pixiv.net/artworks/73537053" target="_blank" rel="noopener">《中二病也要谈恋爱！》</a> (2019.02.22)</li>
-<li><a href="https://www.pixiv.net/artworks/83710927" target="_blank" rel="noopener">《山海》</a> (2020.07.10)</li>
-<li><a href="https://www.pixiv.net/artworks/84100968" target="_blank" rel="noopener">《Cynthia》</a> (2020.09.01)</li>
+        <p>This post is aimed to help people dual boot Windows 10 and Ubuntu on their PC.</p>
+<p>It is worth mentioning that this installation guide is very case-dependent and you might need an alternative way in some specific steps. In my case, I was trying to install Ubuntu on my Surface Book 2, where I originally had Windows 10 Pro installed as the default OS. However, I found no single tutorial that 100% worked for me, and what I had to do was mix-and-matching the steps from a few different tutorials. When none of their solutions works, you may have to figure things out on your own. The main resources I used were the tutorials provided by <a href="https://youtu.be/GXxTxBPKecQ" target="_blank" rel="noopener">SavvyNik</a>, <a href="https://youtu.be/Kc4jUDu5_tk" target="_blank" rel="noopener">Octillionth Tech</a>, and <a href="https://www.bilibili.com/video/BV11k4y1k7Li/" target="_blank" rel="noopener">桩桩计算</a>.</p>
+<p>In general, you would want to follow these steps in order when installing Ubuntu on your Windows machine:</p>
+<ol>
+<li>Partitioning the Disk: Have a partition on the disk larger than 30GB for the new OS.</li>
+<li>Flashing the USB: Flash the Ubuntu image file (.iso) into a USB stick.</li>
+<li>Entering the Boot Menu: Go to the machine’s boot menu and select Ubuntu for further installation.</li>
 </ol>
+<p>For each of these steps, the solution I used will be prioritized over the alternative solutions if there are any.</p>
+<ol>
+<li><p>Partitioning the Disk<br>Normally a laptop has only one disk which will be your Local Disk (C:). Search for “Create and format hard disk partitions” control panel on your Windows 10, where you will be able to right click the “Local Disk (C:)” to select “Shrink Volumn” to make more space available for a new partition that is as least 30GB.<br>However, this approach didn’t work for my laptop. Although there was over 90GB of free space on my C drive, I was only able to shrink around 250MB using the “Shrink Volumn” feature. Therefore, to obtain sufficient space, I ended up using the “AOMEI Partition Assistant” app and it took a few hours to complete the shrinking. I also used this app to create the new partition.</p>
+</li>
+<li><p>Flashing the USB<br>Once you download the ISO file for the Ubuntu version you’d like to use, you then need to flash this image file to a USB. Note that this operation will wipe out all data in the USB! Many tutorials used an app named “balenaEtcher”, but this software somehow didn’t work for me either. I tried a few times, and it kept partitioning my USB in a way that the USB wasn’t recognized by the OS. To recover from such states, I had to use the AOMEI app again to combine those partitions in the USB to make it usable.<br>The alternative app I used was “rufus”, which burned the ISO into my USB without making new partitions.</p>
+</li>
+<li><p>Entering the Boot Menu<br>Boot menus are loaded when computers are booted, where you get to choose the OS you’d like to continue with. However, your laptop will most likely not allow you to use systems other than Windows 10, and to disable this restriction, you need to go to the BIOS of your machine and disable the “Secure Boot” option. Note that how to the BIOS depends on the motherboard or laptop model of your machine. To exit the BIOS, you will have to restart your computer.<br>I was using Surface Book 2, so how I enter the boot menu is pressing the volume-up button and power button the same time. The boot menu will be loaded shortly after you see an unlock icon on a red bar at the top of your screen, where you get to select between “Ubuntu” and “Windows Boot Manager”. Select “Ubuntu” there to finish setting up Ubuntu.</p>
+</li>
+</ol>
+<p>Congratulations on being able to use Ubuntu on your machine!</p>
 
       
     </div>
@@ -344,9 +357,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Procreate/" rel="tag"># Procreate</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/Illustration/" rel="tag"># Illustration</a>
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+            <a href="/tags/Dual-Boot/" rel="tag"># Dual Boot</a>
+          
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
         </div>
       
@@ -359,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/09/21/Resume-Writing/" rel="next" title="How to Write a Good Resume">
-                <i class="fa fa-chevron-left"></i> How to Write a Good Resume
+              <a href="/2023/01/02/Movie-List/" rel="next" title="Youth Cinema">
+                <i class="fa fa-chevron-left"></i> Youth Cinema
               </a>
             
           </div>
@@ -368,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/12/31/Farewell-2020/" rel="prev" title="再见，2020">
-                再见，2020 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

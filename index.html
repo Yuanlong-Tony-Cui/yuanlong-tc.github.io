@@ -229,6 +229,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/03/Ubuntu-Installation-Guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanlong Tony Cui">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="空と海の詩">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/01/03/Ubuntu-Installation-Guide/" itemprop="url">Ubuntu Installation Guide</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-01-03T00:00:00-05:00">
+                2023-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Career/" itemprop="url" rel="index">
+                    <span itemprop="name">Career</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This post is aimed to help people dual boot Windows 10 and Ubuntu on their PC.</p>
+<p>It is worth mentioning that this installation guide is very case-dependent and you might need an alternative way in some specific steps. In my case, I was trying to install Ubuntu on my Surface Book 2, where I originally had Windows 10 Pro installed as the default OS. However, I found no single tutorial that 100% worked for me, and what I had to do was mix-and-matching the steps from a few different tutorials. When none of their solutions works, you may have to figure things out on your own. The main resources I used were the tutorials provided by <a href="https://youtu.be/GXxTxBPKecQ" target="_blank" rel="noopener">SavvyNik</a>, <a href="https://youtu.be/Kc4jUDu5_tk" target="_blank" rel="noopener">Octillionth Tech</a>, and <a href="https://www.bilibili.com/video/BV11k4y1k7Li/" target="_blank" rel="noopener">桩桩计算</a>.</p>
+<p>In general, you would want to follow these steps in order when installing Ubuntu on your Windows machine:</p>
+<ol>
+<li>Partitioning the Disk: Have a partition on the disk larger than 30GB for the new OS.</li>
+<li>Flashing the USB: Flash the Ubuntu image file (.iso) into a USB stick.</li>
+<li>Entering the Boot Menu: Go to the machine’s boot menu and select Ubuntu for further installation.</li>
+</ol>
+<p>For each of these steps, the solution I used will be prioritized over the alternative solutions if there are any.</p>
+<ol>
+<li><p>Partitioning the Disk<br>Normally a laptop has only one disk which will be your Local Disk (C:). Search for “Create and format hard disk partitions” control panel on your Windows 10, where you will be able to right click the “Local Disk (C:)” to select “Shrink Volumn” to make more space available for a new partition that is as least 30GB.<br>However, this approach didn’t work for my laptop. Although there was over 90GB of free space on my C drive, I was only able to shrink around 250MB using the “Shrink Volumn” feature. Therefore, to obtain sufficient space, I ended up using the “AOMEI Partition Assistant” app and it took a few hours to complete the shrinking. I also used this app to create the new partition.</p>
+</li>
+<li><p>Flashing the USB<br>Once you download the ISO file for the Ubuntu version you’d like to use, you then need to flash this image file to a USB. Note that this operation will wipe out all data in the USB! Many tutorials used an app named “balenaEtcher”, but this software somehow didn’t work for me either. I tried a few times, and it kept partitioning my USB in a way that the USB wasn’t recognized by the OS. To recover from such states, I had to use the AOMEI app again to combine those partitions in the USB to make it usable.<br>The alternative app I used was “rufus”, which burned the ISO into my USB without making new partitions.</p>
+</li>
+<li><p>Entering the Boot Menu<br>Boot menus are loaded when computers are booted, where you get to choose the OS you’d like to continue with. However, your laptop will most likely not allow you to use systems other than Windows 10, and to disable this restriction, you need to go to the BIOS of your machine and disable the “Secure Boot” option. Note that how to the BIOS depends on the motherboard or laptop model of your machine. To exit the BIOS, you will have to restart your computer.<br>I was using Surface Book 2, so how I enter the boot menu is pressing the volume-up button and power button the same time. The boot menu will be loaded shortly after you see an unlock icon on a red bar at the top of your screen, where you get to select between “Ubuntu” and “Windows Boot Manager”. Select “Ubuntu” there to finish setting up Ubuntu.</p>
+</li>
+</ol>
+<p>Congratulations on being able to use Ubuntu on your machine!</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/02/Movie-List/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1648,153 +1807,6 @@ POST TO BE UPDATED... -->
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/Chinese-Youth-Day/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yuanlong Tony Cui">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="空と海の詩">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/04/Chinese-Youth-Day/" itemprop="url">数风流人物，还看今朝</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-04T00:00:00-04:00">
-                2020-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Arts/" itemprop="url" rel="index">
-                    <span itemprop="name">Arts</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>bilibili: <a href="https://www.bilibili.com/video/BV1FV411d7u7" target="_blank" rel="noopener">bilibili 献给新一代的演讲《后浪》</a></p>
-<!-- / CONTENT HIDDEN BY AUTHOR / -->
-<p>在这个瞬息万变的时代，互联网产业的发展带给人们空前的机遇。网络的大范围普及使得全世界的人们拥有了越来越便捷的获取和分享知识的权利。而在这个时代受益最大的一批人，当数全世界的青年们。</p>
-<p>在二十一世纪一个全新十年的开始，中国青年们无时无刻不在展现着对未知世界的探索精神与对兴趣爱好的极大热忱。这是无比幸运的一代人，在很早的年岁就有机会透过互联网看见外面世界的模样，轻而易举地接触到各式各样从前根本没有机会看到的事物，从思想文化到科学技术，应有尽有。这个时代带给这一代青年的，是更加广阔的视野，是更加成熟的选择，是对自己未来更加精准的把握。在 bilibili 这个宝贵的平台上，他们分享着五彩斑斓的生活，展示着惊为天人的作品，交流着别具一格的观点，给予彼此快乐，温暖，热情与灵感，传递着每一个中国青年的光和热。</p>
-<p>能成长在这样一个时代是这一代青年的自豪，能拥有着这样一代青年是这一个时代的骄傲。我有幸成长与生活在这样一个时代，更有幸成为这一代青年的一员。</p>
-<p>“愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。 此后如竟没有炬火：我便是唯一的光。”</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1845,7 +1857,7 @@ POST TO BE UPDATED... -->
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1867,7 +1879,7 @@ POST TO BE UPDATED... -->
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
