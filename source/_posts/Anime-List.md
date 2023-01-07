@@ -113,3 +113,5 @@ Fall 2022:
 3. 《Cyberpunk: Edgerunners》
 4. 《School Days》
 5. 《电锯人》
+6. 《命运石之门》
+7. 《命运石之门 0》
