@@ -157,7 +157,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">A man can be destroyed but not defeated.</p>
+        <p class="site-subtitle">There is only one heroism in the world: to see the world as it is, and to love it.</p>
       
   </div>
 
@@ -215,6 +215,151 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/Embedded-Object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanlong Tony Cui">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="空と海の詩">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/26/Embedded-Object/" itemprop="url">Embedded Object</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T00:00:00-04:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Career/" itemprop="url" rel="index">
+                    <span itemprop="name">Career</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Embedded-Object"><a href="#Embedded-Object" class="headerlink" title="Embedded Object"></a>Embedded Object</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The following algorithm helps to store data and calculate subtotal.</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In the MongoDB database, there are a number of documents each of which has a year field (Year, type: string), a month field (Month, type: string) and a revenue field (Revenue, type: float).<br>Each month can have zero to multiple documents recording the revenue obtained from a transaction.<br>The task is to calculate and visualize the subtotal of revenue for each month.</p>
+<h2 id="Inputs-amp-Outputs"><a href="#Inputs-amp-Outputs" class="headerlink" title="Inputs &amp; Outputs"></a>Inputs &amp; Outputs</h2><p>Input(s): a MongoDB collection.<br>Output(s): an object containing revenues for all existing years and months (printed &amp; returned).</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">analyzeForEachMonth</span> (<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Get all the documents (in async function)</span></span><br><span class="line">  <span class="keyword">const</span> transactions = <span class="keyword">await</span> db.Transaction.model.find();</span><br><span class="line">  <span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;transactions.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; Year, Month, Revenue &#125; = transactions[i];</span><br><span class="line">      <span class="comment">// Check if Year and Month have been created in obj. If not, create one with initial revenue of 0.</span></span><br><span class="line">      <span class="keyword">if</span> (!obj[Year]) &#123;</span><br><span class="line">          obj[Year] = &#123;&#125;;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!obj[Year][Month]) &#123;</span><br><span class="line">          obj[Year][Month] = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// Add Revenue to the corresponding Year and Month</span></span><br><span class="line">      obj[Year][Month] += Revenue;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Visualize obj</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Cumulative revenue for all applicable years and months:'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(obj);</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sample Output</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  Cumulative revenue for all applicable years and months:</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">    '2017': &#123;</span></span><br><span class="line"><span class="comment">      '4': 13,000</span></span><br><span class="line"><span class="comment">      '12': 36,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2018': &#123;</span></span><br><span class="line"><span class="comment">      '1': 18,000</span></span><br><span class="line"><span class="comment">      '2': 32,000</span></span><br><span class="line"><span class="comment">      '9': 14,000</span></span><br><span class="line"><span class="comment">      '12': 30,000</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    '2019': &#123;</span></span><br><span class="line"><span class="comment">      '3': 34,000</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -585,8 +730,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Arts/" itemprop="url" rel="index">
-                    <span itemprop="name">Arts</span>
+                  <a href="/categories/Misc/" itemprop="url" rel="index">
+                    <span itemprop="name">Misc</span>
                   </a>
                 </span>
 
@@ -715,7 +860,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -737,7 +882,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
