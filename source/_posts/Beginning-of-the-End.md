@@ -2,7 +2,7 @@
 title: 终于结束的起点 (Beginning of the End)
 date: 2021-10-03 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - AMV
   - Makoto Shinkai

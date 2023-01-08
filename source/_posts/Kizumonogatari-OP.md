@@ -2,7 +2,7 @@
 title: Kizumonogatari OP - unravel
 date: 2020-08-01 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - AMV
   - OP

@@ -2,7 +2,7 @@
 title: 二十岁生日有感
 date: 2020-05-11 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - Birthday
   - Life

@@ -2,7 +2,7 @@
 title: 再见，2020
 date: 2020-12-31 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - Literature
   - Life

@@ -2,7 +2,7 @@
 title: 展览馆
 date: 2020-09-24 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - Procreate
   - Illustration

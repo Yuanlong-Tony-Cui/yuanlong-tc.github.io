@@ -2,7 +2,7 @@
 title: 晴天 (Sunny Day)
 date: 2020-04-30 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - AMV
   - Jay Chou

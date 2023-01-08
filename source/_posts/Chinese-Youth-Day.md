@@ -2,7 +2,7 @@
 title: 数风流人物，还看今朝
 date: 2020-05-04 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - Youth
   - Dream

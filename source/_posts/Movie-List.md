@@ -2,7 +2,7 @@
 title: Youth Cinema
 date: 2023-01-02 00:00:00
 categories:
-  - Arts
+  - Misc
 tags:
   - Movie
 ---
