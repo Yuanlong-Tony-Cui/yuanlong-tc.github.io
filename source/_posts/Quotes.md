@@ -8,4 +8,4 @@ tags:
   - Motto
 ---
 
-- “Nobody in life gets exactly what they thought they were going to get. But if you work really hard and you're kind, amazing things will happen." - Conan O'Brien
+- &#34;Nobody in life gets exactly what they thought they were going to get. But if you work really hard and you're kind, amazing things will happen.&#34; - Conan O&#39;Brien
