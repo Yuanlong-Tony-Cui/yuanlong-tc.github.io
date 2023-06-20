@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,Algorithm,Moment.js,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Week Number and Week PeriodIntroductionThe following algorithm deals with a seires of common problems about the calculation of time and period. DescriptionGiven a start date (e.g. Dec 31, 2018) and a">
+<meta name="keywords" content="JavaScript,Algorithm,Moment.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week Number and Week Period">
+<meta property="og:url" content="http://yoursite.com/2019/04/10/Week-Number-and-Week-Period/index.html">
+<meta property="og:site_name" content="空と海の詩">
+<meta property="og:description" content="Week Number and Week PeriodIntroductionThe following algorithm deals with a seires of common problems about the calculation of time and period. DescriptionGiven a start date (e.g. Dec 31, 2018) and a">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-03-20T23:37:36.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Week Number and Week Period">
+<meta name="twitter:description" content="Week Number and Week PeriodIntroductionThe following algorithm deals with a seires of common problems about the calculation of time and period. DescriptionGiven a start date (e.g. Dec 31, 2018) and a">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/10/Week-Number-and-Week-Period/">
+
+
+
+
+
+  <title>Week Number and Week Period | 空と海の詩</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">空と海の詩</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">There is only one heroism in the world: to see the world as it is, and to love it.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/Week-Number-and-Week-Period/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yuanlong Tony Cui">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="空と海の詩">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Week Number and Week Period</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T00:00:00-04:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Career/" itemprop="url" rel="index">
+                    <span itemprop="name">Career</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Week-Number-and-Week-Period"><a href="#Week-Number-and-Week-Period" class="headerlink" title="Week Number and Week Period"></a>Week Number and Week Period</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The following algorithm deals with a seires of common problems about the calculation of time and period.</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a start date (e.g. Dec 31, 2018) and a current date (e.g. April 26, 2019), calculate the week number of the current date (counting from the start date) and the start date and the end date of that week.</p>
+<h2 id="Inputs-amp-Outputs"><a href="#Inputs-amp-Outputs" class="headerlink" title="Inputs &amp; Outputs"></a>Inputs &amp; Outputs</h2><p>Input(s): a start date (string) and a current date (string).<br>Output(s): the week number of the current date (printed) and the period of that week (printed).</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install moment</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getWeekNumberAndPeriod</span> (<span class="params">start_date_string, curr_date_string</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Create a Date object for the start date and the example date:</span></span><br><span class="line">  <span class="keyword">const</span> startDate = <span class="keyword">new</span> <span class="built_in">Date</span>(start_date_string);</span><br><span class="line">  <span class="keyword">const</span> exampleDate = <span class="keyword">new</span> <span class="built_in">Date</span>(curr_date_string);</span><br><span class="line">  <span class="comment">// Time difference in days in decimal:</span></span><br><span class="line">  <span class="keyword">const</span> inDecimal = (exampleDate - startDate)/<span class="number">1000</span>/<span class="number">60</span>/<span class="number">60</span>/<span class="number">24</span>;</span><br><span class="line">  <span class="keyword">const</span> dayNumber = <span class="built_in">Math</span>.ceil(inDecimal); <span class="comment">// "Dec 31, 2018 23:00:00" is still considered as Day One.</span></span><br><span class="line">  <span class="keyword">const</span> weekNumber = <span class="built_in">Math</span>.floor((daysNumber<span class="number">-1</span>)/<span class="number">7</span>) + <span class="number">1</span>; <span class="comment">// "Jan 7, 2019 00:00:00" is considered to be in Week Two.</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Week Number: <span class="subst">$&#123;weekNumber&#125;</span>.`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> startDateMs = startDate.getTime();</span><br><span class="line">  <span class="keyword">const</span> startWeekMs = startDateMs + ((weekNumber<span class="number">-1</span>)*<span class="number">7</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">const</span> startWeekDate = <span class="keyword">new</span> <span class="built_in">Date</span>(startWeekMs);</span><br><span class="line">  <span class="comment">// Use Moment to format time:</span></span><br><span class="line">  <span class="keyword">const</span> moment = <span class="built_in">require</span>(<span class="string">"moment"</span>);</span><br><span class="line">  moment().format();</span><br><span class="line">  <span class="comment">// Format startWeekDate:</span></span><br><span class="line">  <span class="keyword">const</span> startWeekStr = moment(startWeekDate).format(<span class="string">'MMM D, YYYY'</span>);</span><br><span class="line">  <span class="keyword">const</span> endWeekMs = startDateMs + (weekNumber*<span class="number">7</span><span class="number">-1</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">const</span> endWeekDate = <span class="keyword">new</span> <span class="built_in">Date</span>(endWeekMs);</span><br><span class="line">  <span class="comment">// Format endWeekDate:</span></span><br><span class="line">  <span class="keyword">const</span> endWeekStr = moment(endWeekDate).format(<span class="string">'MMM D, YYYY'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Week Period: <span class="subst">$&#123;startWeekStr&#125;</span> ~ <span class="subst">$&#123;endWeekStr&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Lessons"><a href="#Lessons" class="headerlink" title="Lessons"></a>Lessons</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p><code>new Date()</code> is able to take either one of the following two types of parameter:<br>1 - a string that indicates a time point. (e.g. <code>&quot;Dec 31, 2018 00:00:00&quot;</code> or <code>&quot;2018-12-31 00:00:00&quot;</code>),<br>2 - an integer that indicates the cumulative time in milliseconds starting from Jan 1, 1970, 00:00:00.000 GMT,<br>and it returns a JavaScript date object based on the given parameter.</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><code>exampleDate - startDate</code> returns the time difference in millisecond between two date objects.<br>If the difference is positive, then <code>exampleDate</code> is after <code>startDate</code>; if the difference is negative, then <code>exampleDate</code> is before <code>startDate</code>.</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>To find out the relationship between two variables, it is a good idea to satrt with comparing several representative sample figures:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">daysNumber</th>
+<th style="text-align:center">weekNumber</th>
+<th style="text-align:center">startWeekMs</th>
+<th style="text-align:center">endWeekMs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><code>startDateMs + 0 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 6 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><code>startDateMs + 0 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 6 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><code>startDateMs + 7 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 13 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><code>startDateMs + 7 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 13 * 24*60*60*1000</code></td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><code>startDateMs + 14 * 24*60*60*1000</code></td>
+<td style="text-align:center"><code>startDateMs + 20 * 24*60*60*1000</code></td>
+</tr>
+</tbody>
+</table>
+<p>With some further observation, it becomes much easier to induce the following expressions:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> weekNumber = <span class="built_in">Math</span>.floor((daysNumber<span class="number">-1</span>)/<span class="number">7</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> startWeekMs = startDateMs + ((weekNumber<span class="number">-1</span>)*<span class="number">7</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line"><span class="keyword">const</span> endWeekMs = startDateMs + (weekNumber*<span class="number">7</span><span class="number">-1</span>)*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><a href="http://momentjs.com/docs/" title="Moment.js | Docs" target="_blank" rel="noopener">Moment</a> is an npm package that is very useful in parsing and formatting JS date objects.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+            <a href="/tags/Moment-js/" rel="tag"># Moment.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/26/Embedded-Object/" rel="next" title="Embedded Object">
+                <i class="fa fa-chevron-left"></i> Embedded Object
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/13/The-Continent-Lyrics/" rel="prev" title="The Continent (Lyrics)">
+                The Continent (Lyrics) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yuanlong Tony Cui</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Week-Number-and-Week-Period"><span class="nav-number">1.</span> <span class="nav-text">Week Number and Week Period</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.2.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inputs-amp-Outputs"><span class="nav-number">1.3.</span> <span class="nav-text">Inputs &amp; Outputs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.4.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lessons"><span class="nav-number">1.5.</span> <span class="nav-text">Lessons</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">1.5.4.</span> <span class="nav-text">4.</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanlong Tony Cui</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
