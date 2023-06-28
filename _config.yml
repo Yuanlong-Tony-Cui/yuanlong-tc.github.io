@@ -4,7 +4,7 @@
 
 # Site
 title: 空と海の詩
-subtitle: 'There is only one heroism in the world: to see the world as it is, and to love it.'
+subtitle: 'Please visit the alternative site: yuanlongcui.gatsbyjs.io/blog/'
 description:
 keywords:
 author: Yuanlong Tony Cui
@@ -80,4 +80,4 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/Yuanlong-Tony-Cui/Yuanlong-Tony-Cui.github.io.git
-  branch: gh-pages
+  branch: master
